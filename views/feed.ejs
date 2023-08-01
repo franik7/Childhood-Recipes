@@ -1,0 +1,43 @@
+<%- include('partials/headerfeed') -%>
+  <div class="container">
+
+    <div class="row justify-content-center mt-5">
+     
+      <ul class="row list-unstyled">
+        <h5>Click on the dish or add your own childhood recipe in Profile</h5>
+        <% for(var i=0; i<recipes.length; i++) {%>
+          
+          <li class="col-6 justify-content-between mt-5">
+            <div class="recipe-card border rounded-5">
+            <h2><%= recipes[i].name%></h2>
+            <a href="/recipe/<%= recipes[i]._id%>">
+              <img class="img-fluid" src="<%= recipes[i].image%>">
+            </a>
+          </li>
+        <% } %>
+        </ul>
+        </div>
+
+        
+
+        <div class="container">
+          <!-- Buttons Section -->
+          <div class="container-fluid d-flex justify-content-center col-sm-6 col-md-2 mx-auto button-container">
+            <!-- First button (Favorites) -->
+            <a class="btn btn-primary" href="/profile">Profile</a>
+            <a class="btn btn-primary" href="/favorites">Favorites</a>
+          </div>
+        </div>
+        </div>
+      </div>
+        
+    </div>
+  </div>  
+<%- include('partials/footer') -%>
+
+
+
+
+
+
+ 

@@ -1,0 +1,46 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row ">
+ 
+
+    <div class="col-sm-12 col-md-12 mt-5">
+      <ul class="row list-unstyled">
+        <h5>Your Favorites</h5>
+        <% if (favoriteRecipes.length > 0) { %>
+          <% for (var i = 0; i < favoriteRecipes.length; i++) { %>
+            <li class="col-sm-6 col-md-3 justify-content-between mt-5">
+              <div class="recipe-card border rounded-5">
+                <a href="/recipe/<%= favoriteRecipes[i].recipe._id %>">
+                  <h2><%= favoriteRecipes[i].recipe.name %></h2>
+                  <img class="img-fluid rounded" src="<%= favoriteRecipes[i].recipe.image %>">
+                </a>
+                <p class="underthepic">Click the pic for full Ingredient List and Directions</p>
+                <p class="text-truncate">Ingredients: <%= favoriteRecipes[i].recipe.ingredients %></p>
+                <p class="text-truncate">Directions: <%= favoriteRecipes[i].recipe.directions %></p>
+                <p>Recipe by: <%= favoriteRecipes[i].recipe.user.userName %></p>
+              </div>
+            </li>
+          <% } %>
+        <% } else { %>
+          <li class="col-12 mt-5">
+            <p>No favorites found.</p>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+    
+    
+
+    <div class="container">
+      <!-- Buttons Section -->
+      <div class="container-fluid d-flex justify-content-center col-sm-6 col-md-2 mx-auto button-container">
+        <!-- First button (Favorites) -->
+        <a class="btn btn-primary btn-block" href="/profile">Profile</a>
+        <a class="btn btn-primary btn-block" href="/feed">Feed</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  
+
+<%- include('partials/footer') -%>
