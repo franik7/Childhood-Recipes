@@ -321,7 +321,7 @@ h6,
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  padding: 0 0 4rem 0;
+  padding: 2rem 0 2rem 0;
 }
 
 .footer a {
@@ -371,14 +371,6 @@ h6,
   margin-right: 10px;
 }
 
-img{
-  border-radius: 2%;
-}
-
-img:hover{
-  transform: scale(1.01);
-}
-
 @media (max-width: 576px) {
   .navbar-brand {
     margin-left: 8px;
@@ -387,6 +379,33 @@ img:hover{
   .burger  {
     margin-right: 8px;
   }
+}
+
+.mobilenavtextsize{
+  font-size: smaller;
+}
+
+.btn-secondary:hover {
+  background-color: #007bff; /* Replace this with your desired primary color */
+  border-color: #007bff; /* Replace this with your desired primary color */
+}
+
+.gallery-image {
+  max-height: 300px; /* Set the maximum height for all gallery images */
+  width: 100%;
+  object-fit: cover; /* Maintain the aspect ratio and cover the entire container */
+  object-position: center; /* Center the image within the container */
+  transition: transform 0.2s ease-in-out; /* Add a smooth hover effect */
+  border-radius: 2%;
+  }
+
+
+.gallery-image:hover {
+  transform: scale(1.01); /* Scale the image slightly on hover */
+}
+
+img{
+  border-radius: 2%;
 }
   
 
