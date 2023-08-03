@@ -29,44 +29,6 @@ h6,
   padding: 7rem 0;
 }
 
-.filters a {
-  text-decoration: none;
-  color: #000;
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  position: relative;
-}
-
-.filters a:hover,
-.filters a:focus,
-.filters a:active {
-  text-decoration: none;
-}
-
-.filters a:hover:before {
-  content: "";
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 0;
-  height: 1px;
-  background-color: #000;
-}
-
-.filters a.active {
-  color: #000;
-}
-
-.filters a.active:before {
-  content: "";
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 0;
-  height: 1px;
-  background-color: #000;
-}
 
 .testimonial-wrap .testimonial blockquote p {
   font-size: 20px;
@@ -84,44 +46,7 @@ h6,
   font-size: 28px;
 }
 
-.readmore {
-  display: inline-block;
-  border: 1px solid #000;
-  padding: 10px 15px;
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #000;
-  transition: 0.2s all ease;
-  font-weight: 700;
-}
 
-.readmore:active,
-.readmore:focus,
-.readmore:hover {
-  outline: none;
-}
-
-.readmore:hover {
-  color: #fff;
-  text-decoration: none;
-  background: #000;
-}
-
-.testimonials-slider .swiper-pagination {
-  margin-top: -60px;
-  position: relative;
-}
-
-.testimonials-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: rgba(13, 30, 45, 0.3);
-  opacity: 1;
-}
-
-.testimonials-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: rgba(13, 30, 45, 0.6);
-}
 
 .sticky-content {
   position: sticky;
@@ -399,7 +324,6 @@ h6,
   border-radius: 2%;
   }
 
-
 .gallery-image:hover {
   transform: scale(1.01); /* Scale the image slightly on hover */
 }
@@ -407,5 +331,7 @@ h6,
 img{
   border-radius: 2%;
 }
-  
 
+.recipe-card {
+  margin-bottom: 8px; /* Add margin between recipe cards */
+}

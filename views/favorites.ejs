@@ -4,37 +4,43 @@
 <div class="container mt-5">
 
   <!-- Masonry Gallery -->
-  <div class="col-sm-12 col-md-12 mt-5">
-    <ul class="row list-unstyled">
-      <h5>Your Favorites</h5>
-      <% if (favoriteRecipes.length > 0) { %>
-        <% for (var i = 0; i < favoriteRecipes.length; i++) { %>
-          <li class="col-sm-6 col-md-3 justify-content-between mt-5">
-            <div class="recipe-card border rounded-5">
-              <a href="/recipe/<%= favoriteRecipes[i].recipe._id %>">
-                <h4><%= favoriteRecipes[i].recipe.name %></h4>
-                <img class="img-fluid rounded" src="<%= favoriteRecipes[i].recipe.image %>">
-              </a>
-              <p class="underthepic">Click the pic for full Ingredient List and Directions</p>
-              <p class="text-truncate">Ingredients: <%= favoriteRecipes[i].recipe.ingredients %></p>
-              <p class="text-truncate">Directions: <%= favoriteRecipes[i].recipe.directions %></p>
-              <p>Recipe by: <%= favoriteRecipes[i].recipe.user.userName %></p>
-            </div>
-          </li>
-        <% } %>
-      <% } else { %>
-        <li class="col-12 mt-5">
-          <p>No favorites found.</p>
-        </li>
+  <div id="masonry-gallery" class="row justify-content-center mt-5 ">
+    <h6 class="col-12">Your Favorites</h6>
+    
+    
+    <% if (favoriteRecipes.length > 0) { %>
+      <% for (var i = 0; i < favoriteRecipes.length; i++) { %>
+        
+          <div class="recipe-card border rounded-5">
+            <a href="/recipe/<%= favoriteRecipes[i].recipe._id %>">
+              <h4><%= favoriteRecipes[i].recipe.name %></h4>
+              <img class="img-fluid rounded gallery-image" src="<%= favoriteRecipes[i].recipe.image %>">
+            </a>
+            <p class="underthepic">Click the pic for full Ingredient List and Directions</p>
+            <p class="text-truncate">Ingredients: <%= favoriteRecipes[i].recipe.ingredients %></p>
+            <p class="text-truncate">Directions: <%= favoriteRecipes[i].recipe.directions %></p>
+            <p>Recipe by: <%= favoriteRecipes[i].recipe.user.userName %></p>
+            
+          </div>
+         
       <% } %>
-    </ul>
+     
+    <% } else { %>
+      <li class="col-12 mt-5">
+        <p>No favorites found.</p>
+      </li>
+    <% } %>
+
+
+
   </div>
   
-
  
+
+
   <!-- End of Masonry Gallery -->
-
-
+</div>
+  <br>
   <script>
     // Initialize Masonry after the content has loaded
     document.addEventListener("DOMContentLoaded", function () {
@@ -66,4 +72,7 @@
 
 
 
+
 <%- include('partials/footer') -%>
+
+

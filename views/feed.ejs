@@ -6,8 +6,8 @@
     <h6 class="col-12">Click on the dish or add your own childhood recipe in Profile</h6>
     <% for(var i=0; i<recipes.length; i++) { %>
         <div class="recipe-card border rounded-5">
-          <h4><%= recipes[i].name%></h4>
           <a href="/recipe/<%= recipes[i]._id %>">
+          <h4><%= recipes[i].name%></h4>
             <img class="img-fluid rounded gallery-image" src="<%= recipes[i].image %>" alt="<%= recipes[i].name %>">
           </a>
         </div>
@@ -21,7 +21,7 @@
       var masonryGallery = new Masonry("#masonry-gallery", {
         itemSelector: ".masonry-item",
         columnWidth: ".col-md-6",
-  
+        gutter: 20,
       });
     });
   </script>
@@ -30,19 +30,10 @@
   <!-- End of Masonry Gallery -->
 </div>
   <br>
-  <script>
-    // Initialize Masonry after the content has loaded
-    document.addEventListener("DOMContentLoaded", function () {
-      var masonryGallery = new Masonry("#masonry-gallery", {
-        itemSelector: ".masonry-item",
-        columnWidth: ".col-md-6",
+ 
+
+
   
-      });
-    });
-  </script>
-
-
-  <!-- End of Masonry Gallery -->
 
 
 
@@ -62,3 +53,5 @@
 
 
 <%- include('partials/footer') -%>
+
+
