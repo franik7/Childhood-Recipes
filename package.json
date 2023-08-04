@@ -1,7 +1,7 @@
 {
-  "name": "binary-upload-boom",
+  "name": "childhood-recipes",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "Childhood Recipes",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

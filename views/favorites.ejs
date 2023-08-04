@@ -10,7 +10,6 @@
     
     <% if (favoriteRecipes.length > 0) { %>
       <% for (var i = 0; i < favoriteRecipes.length; i++) { %>
-        
           <div class="recipe-card border rounded-5">
             <a href="/recipe/<%= favoriteRecipes[i].recipe._id %>">
               <h4><%= favoriteRecipes[i].recipe.name %></h4>

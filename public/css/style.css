@@ -15,60 +15,16 @@ a:hover {
   color: grey;
 }
 
-h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-.font-heading {
+h6 {
   font-family: "Raleway", sans-serif;
 }
 
 .section {
   padding: 7rem 0;
-}
-
-
-.testimonial-wrap .testimonial blockquote p {
-  font-size: 20px;
-}
-
-.h3 {
-  font-size: 20px;
-}
-
-.h4 {
-  font-size: 16px;
-}
-
-.heading {
-  font-size: 28px;
-}
-
-
-
-.sticky-content {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  /* required */
-}
-
-.list-line li {
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 30px;
-}
-
-.list-line li:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.7rem;
-  width: 10px;
-  height: 2px;
-  background: #000;
 }
 
 .form-control {
@@ -87,23 +43,7 @@ h6,
   border: 1px solid transparent;
 }
 
-.custom-progress {
-  height: 7px;
-  border-radius: 0;
-}
-
-.custom-progress .progress-bar {
-  background: #000;
-}
-
 /* Services */
-.services i {
-  font-size: 40px;
-}
-
-.services h4 {
-  padding-top: 10px;
-}
 
 /*--------------------------------------------------------------
 # Header
@@ -132,10 +72,6 @@ h6,
 
 .custom-navmenu .custom-menu li a:hover {
   text-decoration: none;
-}
-
-.custom-navmenu .custom-menu li.active a {
-  text-decoration: underline;
 }
 
 .custom-navmenu h3 {
@@ -221,22 +157,6 @@ h6,
 }
 
 /* Click */
-.burger.active span {
-  opacity: 0;
-}
-
-.burger.active:before,
-.burger.active:after {
-  top: 40%;
-}
-
-.burger.active:before {
-  transform: rotate(45deg);
-}
-
-.burger.active:after {
-  transform: rotate(-45deg);
-}
 
 .burger:focus {
   outline: none;
@@ -247,33 +167,6 @@ h6,
 --------------------------------------------------------------*/
 .footer {
   padding: 2rem 0 2rem 0;
-}
-
-.footer a {
-  color: #000;
-}
-
-.social a {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #f8f9fa;
-  position: relative;
-  text-align: center;
-  color: #0d1e2d;
-}
-
-.social a span {
-  display: inline-block;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.social a:hover {
-  color: #000;
 }
 
 .recipe-card {
@@ -335,3 +228,7 @@ img{
 .recipe-card {
   margin-bottom: 8px; /* Add margin between recipe cards */
 }
+
+
+
+

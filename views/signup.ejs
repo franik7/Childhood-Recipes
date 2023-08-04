@@ -1,7 +1,10 @@
 <%- include('partials/headerfeed') -%>
+
     <main class="container">
         <div class="row justify-content-center">
             <section class="col-6 mt-5">
+              <h5>Please sign up </h5>
+              <br>
                 <% if (locals.messages.errors) { %>
                     <% messages.errors.forEach( el => { %>
                         <div class="alert alert-danger"><%= el.msg %></div>
@@ -35,5 +38,5 @@
             </section>
         </div>
     </main>
-
+    
 <%- include('partials/footer') -%>

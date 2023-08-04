@@ -3,6 +3,8 @@
 <main class="container">
   <div class="row justify-content-center">
     <section class="col-6 mt-5">
+      <h5>Please log in </h5>
+      <br>
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
       <% }) %> <% } %> <% if (locals.messages.info) { %> <%
