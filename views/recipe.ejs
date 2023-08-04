@@ -39,7 +39,7 @@
           <div class="col-12 col-md-6 mb-2 order-4 order-md-4 order-sm-4">
             <!-- Add an element to hold the share button -->
 <div id="shareButtonContainer">
-  <a class="btn btn-secondary btn-block" href="https://childhood-recipes.onrender.com/recipe/<%= recipe.id %>" id="shareButton"><i class="fa fa-share"></i> Share</a>
+  <a class="btn btn-secondary btn-block" href="https://childhood-recipes.cyclic.app/recipe/<%= recipe.id %>" id="shareButton"><i class="fa fa-share"></i> Share</a>
 </div>
 
 <!-- JavaScript code to handle the button click and copy the link -->
@@ -53,7 +53,7 @@
     event.preventDefault(); // Prevent the default behavior (opening email client)
 
     // Create the share link dynamically
-    const shareLink = `https://childhood-recipes.cyclic.app//recipe/${recipeId}`;
+    const shareLink = `https://childhood-recipes.cyclic.app/recipe/${recipeId}`;
 
     // Create a temporary input element to copy the link to the clipboard
     const tempInput = document.createElement("input");
