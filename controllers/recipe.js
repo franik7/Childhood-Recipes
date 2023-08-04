@@ -49,7 +49,7 @@ module.exports = {
       console.log(err);
     }
   },
-  
+
  getRecipe: async (req, res) => {
     try {
       const recipe = await Recipe.findById(req.params.id);

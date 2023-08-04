@@ -1,7 +1,7 @@
 <%- include('partials/header') -%>
 
 <div class="container mt-5">
-  <div class="row justify-content-center recipe-card border rounded-5">
+  <div class="row justify-content-center recipe-card ">
     <!-- Recipe Information Column -->
     <div class="col-md-6">
       <h2><%= recipe.name %></h2>
@@ -53,7 +53,7 @@
     event.preventDefault(); // Prevent the default behavior (opening email client)
 
     // Create the share link dynamically
-    const shareLink = `https://childhood-recipes.onrender.com/recipe/${recipeId}`;
+    const shareLink = `https://childhood-recipes.cyclic.app//recipe/${recipeId}`;
 
     // Create a temporary input element to copy the link to the clipboard
     const tempInput = document.createElement("input");
@@ -85,7 +85,7 @@
   </div>
 
   <!-- Comment Section -->
-  <div class="mt-5">
+  <div class="mt-5 ">
     <h2>Add a comment</h2>
     <form action="/comment/createComment/<%= recipe._id %>" method="POST">
       <div class="mb-3">
@@ -98,12 +98,12 @@
   </div>
 
 <!-- Comment List -->
-<div class="mt-5">
+<div class="mt-5 ">
   <h2>Comments</h2>
-  <ul class="mt-5 list-unstyled">
+  <ul class="mt-5 list-unstyled ">
     <% for (var i = 0; i < comments.length; i++) { %>
       <li class="col-12 justify-content-between mt-3">
-        <div class="comment-box p-3 border rounded">
+        <div class="comment-box p-3 recipe-card">
           <%= comments[i].comment %>
           <!-- Like Comment Button (You can add the form action and method here) -->
         </div>

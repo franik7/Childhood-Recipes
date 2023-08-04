@@ -229,6 +229,9 @@ img{
   margin-bottom: 8px; /* Add margin between recipe cards */
 }
 
-
+.namehighlight{
+  color:#0275d8;
+  font-weight: bold;
+}
 
 
