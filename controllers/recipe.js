@@ -72,24 +72,19 @@ module.exports = {
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
-  
-      // Split ingredients and directions based on new lines and store as arrays
-      const ingredientsArray = req.body.ingredients.split('\n').map((item) => item.trim());
-      const directionsArray = req.body.directions.split('\n').map((item) => item.trim());
-  
-      // Create the recipe in the database with the formatted ingredients and directions
+
+      // media is stored on cloudianry - the above request responds with url to media and the media id that you will need when deleting content
       await Recipe.create({
         name: req.body.name,
         image: result.secure_url,
         cloudinaryId: result.public_id,
-        ingredients: ingredientsArray,
-        directions: directionsArray,
+        ingredients: req.body.ingredients,
+        directions: req.body.directions,
         likes: 0,
         user: req.user.id,
       });
-  
-      console.log('Recipe has been added!');
-      res.redirect('/profile');
+      console.log("Recipe has been added!");
+      res.redirect("/profile");
     } catch (err) {
       console.log(err);
     }
