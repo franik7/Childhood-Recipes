@@ -234,4 +234,10 @@ img{
   font-weight: bold;
 }
 
+.text-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 300px; /* You can adjust this value as per your preference */
+}
 

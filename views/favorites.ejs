@@ -1,77 +1,43 @@
 <%- include('partials/header') -%>
 
-
 <div class="container mt-5">
 
   <!-- Masonry Gallery -->
-  <div id="masonry-gallery" class="row justify-content-center mt-5 ">
+  <div id="masonry-gallery" class="row justify-content-center mt-5">
     <h6 class="col-12">Your Favorites</h6>
-    
-    
+
     <% if (favoriteRecipes.length > 0) { %>
       <% for (var i = 0; i < favoriteRecipes.length; i++) { %>
-          <div class="recipe-card border rounded-5">
-            <a href="/recipe/<%= favoriteRecipes[i].recipe._id %>">
-              <h4><%= favoriteRecipes[i].recipe.name %></h4>
-              <img class="img-fluid rounded gallery-image" src="<%= favoriteRecipes[i].recipe.image %>">
-            </a>
-            <p class="underthepic">Click the pic for full Ingredient List and Directions</p>
-            <p class="text-truncate">Ingredients: <%= favoriteRecipes[i].recipe.ingredients %></p>
-            <p class="text-truncate">Directions: <%= favoriteRecipes[i].recipe.directions %></p>
-            <p>Recipe by: <%= favoriteRecipes[i].recipe.user.userName %></p>
-            
-          </div>
-         
+        <div class="recipe-card border rounded-5">
+          <a href="/recipe/<%= favoriteRecipes[i].recipe._id %>">
+            <h4><%= favoriteRecipes[i].recipe.name %></h4>
+            <img class="img-fluid rounded gallery-image" src="<%= favoriteRecipes[i].recipe.image %>">
+          </a>
+          <p class="underthepic">Click the pic for full Ingredient List and Directions</p>
+          <p class="text-truncate">Ingredients: <%= favoriteRecipes[i].recipe.ingredients %></p>
+          <p class="text-truncate">Directions: <%= favoriteRecipes[i].recipe.directions %></p>
+          <p>Recipe by: <%= favoriteRecipes[i].recipe.user.userName %></p>
+        </div>
       <% } %>
-     
     <% } else { %>
-      
-        <p>No favorites found.</p>
-      
+      <p>No favorites found.</p>
     <% } %>
-
-
-
   </div>
-  
- 
-
-
   <!-- End of Masonry Gallery -->
 </div>
-  <br>
-  <script>
-    // Initialize Masonry after the content has loaded
-    document.addEventListener("DOMContentLoaded", function () {
-      var masonryGallery = new Masonry("#masonry-gallery", {
-        itemSelector: ".masonry-item",
-        columnWidth: ".col-md-6",
-  
-      });
-    });
-  </script>
+<br>
 
 
-  <!-- End of Masonry Gallery -->
-
-
-
-  <div class="container">
-    <!-- Buttons Section -->
-    <div class="container-fluid d-flex justify-content-center col-sm-6 col-md-2 mx-auto button-container">
-      <!-- First button (Favorites) -->
-      <a class="btn btn-secondary" href="/profile">Profile</a>
-      <a class="btn btn-secondary" href="/favorites">Favorites</a>
-    </div>
+<div class="container">
+  <!-- Buttons Section -->
+  <div class="container-fluid d-flex justify-content-center col-sm-6 col-md-2 mx-auto button-container">
+    <!-- First button (Favorites) -->
+    <a class="btn btn-secondary" href="/profile">Profile</a>
+    <a class="btn btn-secondary" href="/favorites">Favorites</a>
   </div>
+</div>
 
-
-
-
-
-
-
+<!-- Template Main JS File -->
+<script src="public/js/main.js"></script>
 
 <%- include('partials/footer') -%>
-
-

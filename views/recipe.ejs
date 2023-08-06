@@ -42,46 +42,33 @@
   <a class="btn btn-secondary btn-block" href="https://childhood-recipes.cyclic.app/recipe/<%= recipe.id %>" id="shareButton"><i class="fa fa-share"></i> Share</a>
 </div>
 
-<!-- JavaScript code to handle the button click and copy the link -->
-<script>
-  // Replace this with the actual JavaScript code to fetch the recipe ID from your data
-  const recipeId = "<%= recipe.id %>";
-
-  // Get the share button and add a click event listener
-  const shareButton = document.getElementById("shareButton");
-  shareButton.addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent the default behavior (opening email client)
-
-    // Create the share link dynamically
-    const shareLink = `https://childhood-recipes.cyclic.app/recipe/${recipeId}`;
-
-    // Create a temporary input element to copy the link to the clipboard
-    const tempInput = document.createElement("input");
-    tempInput.value = shareLink;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-
-    // Notify the user that the link has been copied
-    alert("Link copied to clipboard!");
-  });
-</script>
-
           </div>
        
       </div>
     </div>
 
-    <!-- Ingredients Column -->
-    <div class="col-md-3 mt-5">
-      <p>Ingredients: <%= recipe.ingredients %></p>
-    </div>
+ 
+   <!-- Ingredients Column -->
+<div class="col-md-3 mt-5">
+  <h3>Ingredients</h3>
+  <ul>
+    <% const ingredientsList = recipe.ingredients.split('\n'); %>
+    <% for (var i = 0; i < ingredientsList.length; i++) { %>
+      <li><%= ingredientsList[i] %></li>
+    <% } %>
+  </ul>
+</div>
 
-    <!-- Directions Column -->
-    <div class="col-md-3 mt-5">
-      <p>Directions: <%= recipe.directions %></p>
-    </div>
+<!-- Directions Column -->
+<div class="col-md-3 mt-5">
+  <h3>Directions</h3>
+  <ol>
+    <% const directionsList = recipe.directions.split('\n'); %>
+    <% for (var i = 0; i < directionsList.length; i++) { %>
+      <li><%= directionsList[i] %></li>
+    <% } %>
+  </ol>
+</div>
   </div>
 
   <!-- Comment Section -->
