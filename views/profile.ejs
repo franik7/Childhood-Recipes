@@ -14,11 +14,11 @@
 
           <div class="mb-3">
             <label for="ingredients" class="form-label">Ingredients</label>
-            <textarea class="form-control" id="ingredients" name="ingredients" placeholder="Pelase enter each ingredient on the new line"></textarea>
+            <textarea class="form-control" id="ingredients" name="ingredients" placeholder="Please enter each ingredient on the new line"></textarea>
           </div>
           <div class="mb-3">
             <label for="directions" class="form-label">Directions</label>
-            <textarea class="form-control" id="directions" name="directions" placeholder="Pelase enter each step on the new line"></textarea>
+            <textarea class="form-control" id="directions" name="directions" placeholder="Please enter each step on the new line"></textarea>
           </div>
           <div class="mb-3">
             <label for="imgUpload" class="form-label">Image</label>
@@ -38,7 +38,7 @@
         <div id="masonry-gallery" class="row justify-content-center mt-5">
       
           <% for(var i=0; i<recipes.length; i++) { %>
-           
+          
               <div class="recipe-card border rounded-5">
                 <h4><%= recipes[i].name%></h4>
                 <a href="/recipe/<%= recipes[i]._id %>">
