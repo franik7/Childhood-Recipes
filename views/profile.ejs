@@ -1,24 +1,23 @@
 <%- include('partials/header') -%>
-<div class="container">
-  <div class="row mt-5">
+
+<div class="container mt-5">
+  <div class="row">
+    <h5>Profile</h5>
+    <br><br>
     <div class="col-md-6">
-      <h5>Profile</h5>
-      <div class="mt-5">
-     
-        <h4>Add a recipe</h4>
+        <h4>Add a Recipe</h4>
         <form action="/recipe/createRecipe" enctype="multipart/form-data" method="POST">
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="title" name="name">
           </div>
-
           <div class="mb-3">
             <label for="ingredients" class="form-label">Ingredients</label>
-            <textarea class="form-control" id="ingredients" name="ingredients" placeholder="Please enter each ingredient on the new line"></textarea>
+            <textarea class="form-control" id="ingredients" name="ingredients" placeholder="Please enter each ingredient on a new line"></textarea>
           </div>
           <div class="mb-3">
             <label for="directions" class="form-label">Directions</label>
-            <textarea class="form-control" id="directions" name="directions" placeholder="Please enter each step on the new line"></textarea>
+            <textarea class="form-control" id="directions" name="directions" placeholder="Please enter each step on a new line"></textarea>
           </div>
           <div class="mb-3">
             <label for="imgUpload" class="form-label">Image</label>
@@ -26,65 +25,35 @@
           </div>
           <button type="submit" class="btn btn-secondary" value="Upload">Add a Recipe</button>
         </form>
+      
+    </div>
+
+    <div class="col-md-6 mt-4 mt-md-0">
+      <h4 class="mb-3">My Recipes</h4>
+      <div id="masonry-gallery" class="row justify-content-center">
+        <% for(var i=0; i<recipes.length; i++) { %>
+          <div class="recipe-card col-md-12 mb-4">
+            <h4><%= recipes[i].name %></h4>
+            <a href="/recipe/<%= recipes[i]._id %>">
+              <img class="img-fluid rounded gallery-image" src="<%= recipes[i].image %>" alt="<%= recipes[i].name %>">
+              <p class="underthepic">Click the pic for full Ingredient List and Directions</p>
+              <p class="text-truncate">Ingredients: <%= recipes[i].ingredients %></p>
+              <p class="text-truncate">Directions: <%= recipes[i].directions %></p>
+            </a>
+          </div>
+        <% } %>
       </div>
     </div>
-
-
-
-    
-    <div class="col-md-6">
-      <ul class="row list-unstyled">
-        <h5 class="col-12">My Recipes</h5>
-        <div id="masonry-gallery" class="row justify-content-center mt-5">
-      
-          <% for(var i=0; i<recipes.length; i++) { %>
-          
-              <div class="recipe-card border rounded-5">
-                <h4><%= recipes[i].name%></h4>
-                <a href="/recipe/<%= recipes[i]._id %>">
-                  <img class="img-fluid rounded gallery-image" src="<%= recipes[i].image %>" alt="<%= recipes[i].name %>">
-                  <p class="underthepic">Click the pic for full Ingredient List and Directions</p>
-                  <p class="text-truncate">Ingredients: <%= recipes[i].ingredients%></p>
-                  <p class="text-truncate">Directions: <%= recipes[i].directions%></p>
-                </a>
-              </div>
-            
-          <% } %>
-        </div>
-      </ul>
-    </div>
-  
- 
-
- 
-      <!-- Masonry Gallery -->
-  
-      <br>
-      <script>
-        // Initialize Masonry after the content has loaded
-        document.addEventListener("DOMContentLoaded", function () {
-          var masonryGallery = new Masonry("#masonry-gallery", {
-            itemSelector: ".masonry-item",
-            columnWidth: ".col-md-6",
-      
-          });
-        });
-      </script>
-    
-    
-      <!-- End of Masonry Gallery -->
-  
-
-
-
-<div class="container">
-  <!-- Buttons Section -->
-  <div class="container-fluid d-flex justify-content-center col-sm-6 col-md-2 mx-auto button-container">
-    <!-- First button (Favorites) -->
-    <a class="btn btn-secondary btn-block" href="/favorites">Favorites</a>
-    <a class="btn btn-secondary btn-block" href="/feed">Feed</a>
   </div>
 </div>
 
+<div class="container">
+  <!-- Buttons Section -->
+  <div class="container-fluid d-flex justify-content-center col-sm-6 col-md-2 mx-auto button-container mt-4">
+    <!-- First button (Favorites) -->
+    <a class="btn btn-secondary" href="/profile">Profile</a>
+    <a class="btn btn-secondary" href="/favorites">Favorites</a>
+  </div>
+</div>
 
 <%- include('partials/footer') -%>

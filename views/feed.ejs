@@ -2,54 +2,47 @@
 <div class="container mt-5">
 
   <!-- Masonry Gallery -->
-  <div id="masonry-gallery" class="row justify-content-center mt-5 ">
-    <h6 class="col-12">Click on the dish or add your own childhood recipe in Profile</h6>
-    <% for(var i=0; i<recipes.length; i++) { %>
-        <div class="recipe-card border rounded-5">
-          <a href="/recipe/<%= recipes[i]._id %>">
-          <h4><%= recipes[i].name%></h4>
-            <img class="img-fluid rounded gallery-image" src="<%= recipes[i].image %>" alt="<%= recipes[i].name %>">
-          </a>
-        </div>
-      
-    <% } %>
-  </div>
-  <br>
-  <script>
-    // Initialize Masonry after the content has loaded
-    document.addEventListener("DOMContentLoaded", function () {
-      var masonryGallery = new Masonry("#masonry-gallery", {
-        itemSelector: ".masonry-item",
-        columnWidth: ".col-md-6",
-        gutter: 20,
-      });
-    });
-  </script>
-
-
-  <!-- End of Masonry Gallery -->
-</div>
-  <br>
- 
-
-
-  
-
-
-
-  <div class="container">
-    <!-- Buttons Section -->
-    <div class="container-fluid d-flex justify-content-center col-sm-6 col-md-2 mx-auto button-container">
-      <!-- First button (Favorites) -->
-      <a class="btn btn-secondary" href="/profile">Profile</a>
-      <a class="btn btn-secondary" href="/favorites">Favorites</a>
+  <div id="masonry-gallery" class="row justify-content-center mt-5">
+    <h5 class="col-12 text-center">Welcome to Childhood Recipes, a delightful online platform dedicated to preserving and sharing cherished culinary memories from our past. Embark on a nostalgic journey through a treasure trove of heartwarming recipes that have been handed down through generations, cherished by families, and enjoyed during our carefree days of youth.</h5>
+    <h6 class="col-12 text-center">Please click on the recipe to begin.</h6>
+    <div class="col-12">
+      <div class="row">
+        <% for(var i=0; i<recipes.length; i++) { %>
+          <div class="col-md-6 mb-6">
+            <div class="recipe-card border rounded-5">
+              <a href="/recipe/<%= recipes[i]._id %>">
+                <h4><%= recipes[i].name %></h4>
+                <img class="img-fluid rounded gallery-image" src="<%= recipes[i].image %>" alt="<%= recipes[i].name %>">
+              </a>
+            </div>
+          </div>
+        <% } %>
+      </div>
     </div>
   </div>
+</div>
+<br>
+<script>
+  // Initialize Masonry after the content has loaded
+  document.addEventListener("DOMContentLoaded", function () {
+    var masonryGallery = new Masonry("#masonry-gallery", {
+      itemSelector: ".masonry-item",
+      columnWidth: ".col-md-6",
+      gutter: 20,
+    });
+  });
+</script>
+<!-- End of Masonry Gallery -->
+</div>
+<br>
 
-
-
-
-
-
+<div class="container">
+  <!-- Buttons Section -->
+  <div class="container-fluid d-flex justify-content-center col-sm-6 col-md-2 mx-auto button-container">
+    <!-- First button (Favorites) -->
+    <a class="btn btn-secondary" href="/profile">Profile</a>
+    <a class="btn btn-secondary" href="/favorites">Favorites</a>
+  </div>
+</div>
 
 <%- include('partials/footer') -%>
